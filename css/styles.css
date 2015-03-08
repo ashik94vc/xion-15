@@ -448,7 +448,7 @@ input[type="button"] {
 
 /* ======= Promo ======= */
 .promo {
-  padding-top: 120px;
+  padding-top: 70px;
   position: relative;
   color: #fff;
   margin-bottom: 80px;
@@ -518,6 +518,13 @@ input[type="button"] {
   color: #999999;
   font-size: 25px;
 }
+
+.section .ed{
+  margin: 0 auto;
+  margin-bottom: 20px;
+  color: #999999;
+  font-size: 25px;
+}
 .section-on-bg .title {
   color: #fff;
 }
@@ -538,6 +545,12 @@ input[type="button"] {
   margin-top: 0;
 }
 .why .intro {
+  color: #999999;
+  margin-bottom: 30px;
+  font-size: 18px;
+}
+
+.why .ed{
   color: #999999;
   margin-bottom: 30px;
   font-size: 18px;
@@ -953,6 +966,9 @@ footer .footer-below {
   .section .intro {
     font-size: 16px;
   }
+  .section .ed{
+    font-size: 16px;
+  }
   .promo {
     height: 420px;
   }
@@ -1124,14 +1140,31 @@ footer .footer-below {
   padding-top: 70px;
 }
 
+.flex-clock{
+  display: flex;
+  flex-direction: row;
+  justify-content:center;
+  align-items:center;
+}
+
 .flex-container{
   display: flex;
   flex-direction: row;
   justify-content:center;
   align-items:center;
 }
+.flex-container-contact{
+  display: flex;
+  flex-direction: row;
+  justify-content:center;
+  align-items:center;
+  padding: 10px 30px 50px 30px;
+}
 @media (max-width: 992px){
   .flex-container{
+    display: block;
+  }
+  .flex-container-contact{
     display: block;
   }
 }

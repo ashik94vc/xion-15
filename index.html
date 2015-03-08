@@ -1,8 +1,8 @@
 
 <!DOCTYPE html>
-<!--[if IE 8]> <html lang="en" class="ie8"> <![endif]-->  
-<!--[if IE 9]> <html lang="en" class="ie9"> <![endif]-->  
-<!--[if !IE]><!--> <html lang="en"> <!--<![endif]-->  
+<!--[if IE 8]> <html lang="en" class="ie8"> <![endif]-->
+<!--[if IE 9]> <html lang="en" class="ie9"> <![endif]-->
+<!--[if !IE]><!--> <html lang="en"> <!--<![endif]-->
 <head>
     <title>SRM Xion</title>
     <!-- Meta -->
@@ -10,22 +10,24 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="The official webpage for SRM Xion 2015">
-    <meta name="author" content="Ganesh JCS <ganesh.jcs@gmail.com>">    
-    <link href='http://fonts.googleapis.com/css?family=Roboto:400,400italic,500,500italic,700,700italic,900,900italic,300italic,300' rel='stylesheet' type='text/css'> 
+    <link href='http://fonts.googleapis.com/css?family=Roboto:400,400italic,500,500italic,700,700italic,900,900italic,300italic,300' rel='stylesheet' type='text/css'>
     <link href='http://fonts.googleapis.com/css?family=Roboto+Slab:400,700,300,100' rel='stylesheet' type='text/css'>
     <!-- Global CSS -->
-    <link rel="stylesheet" href="css/bootstrap.min.css">   
-    <!-- Plugins CSS -->    
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <!-- Plugins CSS -->
     <link rel="stylesheet" href="font-awesome/css/font-awesome.min.css">
     <link rel="stylesheet" href="flexslider/flexslider.css">
     <!-- Theme CSS -->
     <link id="theme-style" rel="stylesheet" href="css/styles.css">
-</head> 
+    <script type="text/javascript" src="js/jquery-1.11.2.min.js"></script>
+    <script src="FlipClock/flipclock.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="FlipClock/flipclock.css">
+</head>
 
-<body class="home-page" data-spy="scroll" data-target=".navbar-main" id="home">   
-    <!-- ******HEADER****** --> 
-    <header id="header" class="header">  
-        <div class="container">       
+<body class="home-page" data-spy="scroll" data-target=".navbar-main" id="home">
+    <!-- ******HEADER****** -->
+    <header id="header" class="header">
+        <div class="container">
             <h1 class="logo">
                 <a data-scroll href="#home"><span class="text">XION</span></a>
             </h1><!--//logo-->
@@ -42,15 +44,16 @@
                     <ul class="nav navbar-nav" role="tablist">
                         <li class="active nav-item hidden"><a data-scroll href="#home">Home</a></li>
                         <li class="nav-item page-scroll"><a data-scroll href="#about">About</a></li>
-                        <li class="nav-item page-scroll"><a data-scroll href="#events">Events</a></li>                        
+                        <li class="nav-item page-scroll"><a data-scroll href="#events">Events</a></li>
                         <li class="nav-item page-scroll"><a data-scroll href="#workshops">Workshops</a></li>
                         <li class="nav-item page-scroll"><a data-scroll href="#contact">Contact</a></li>
+                        <li class="hidden-xs"><a class="btn btn-cta" href="https://docs.google.com/forms/d/1cZM5DGH9KOsycdtvZFsi60TgwQhTVJRn70pVWMqLILg/viewform?usp=send_form" target="_blank">REGISTER</a></li>
                     </ul><!--//nav-->
                 </div><!--//navabr-collapse-->
-            </nav><!--//main-nav-->                     
+            </nav><!--//main-nav-->
         </div><!--//container-->
     </header><!--//header-->
-    
+
     <div class="bg-slider-wrapper">
         <div class="flexslider bg-slider">
             <ul class="slides">
@@ -59,8 +62,8 @@
                 <li class="slide slide-3"></li>
             </ul>
         </div>
-    </div><!--//bg-slider-wrapper-->        
-    
+    </div><!--//bg-slider-wrapper-->
+
     <section class="promo section section-on-bg">
         <div class="container text-center">
             <div class="col-lg-3 visible-lg"><img src="img/logo.png" align="left" width="100"></div>
@@ -71,20 +74,58 @@
             <h2 class="title">XION '15</h2>
             <p class="catch">Robomania Unleashed</p><br/>
             <span style="font-size:24px;padding-bottom:30px;">19<sup>th</sup> & 20<sup>th</sup> March 2015</span>
-            <p style="padding-top:30px;"><a class="btn btn-cta btn-cta-primary" href="">Register</a></p>   
+            <p style="padding-top:30px;"><a class="btn btn-cta btn-cta-primary" style="padding:20px 50px 20px 50px;font-size:24px" href="https://docs.google.com/forms/d/1cZM5DGH9KOsycdtvZFsi60TgwQhTVJRn70pVWMqLILg/viewform?usp=send_form" target="_blank">Register</a></p>
             </div>
         </div><!--//container-->
     </section><!--//promo-->
-    
-    <div class="sections-wrapper">   
-     
+
+    <div class="sections-wrapper">
+
+        <section id="" class="section why" style="padding-bottom:0;">
+            <div class="container">
+                <h2 class="title text-center">Get Ready for Xion'15!</h2>
+                <div class="flex-container">
+                  <div class="col-sm-6 hidden-xs" style="padding:10px 10px 0 px 10px;">
+                  <div class="clock">
+                    <script type="text/javascript">
+                      var clock;
+
+                      $(document).ready(function() {
+
+                        // Grab the current date
+                        var currentDate = new Date(); 
+
+                        // Set some date in the future. In this case, it's always Jan 1
+                        var futureDate  = new Date('March 19, 2015 09:00:00');
+
+                        // Calculate the difference in seconds between the future and current date
+                        var diff = futureDate.getTime() / 1000 - currentDate.getTime() / 1000;
+
+                        // Instantiate a coutdown FlipClock
+                        clock = $('.clock').FlipClock(diff, {
+                          clockFace: 'DailyCounter',
+                          countdown: true,
+                          showSeconds: false
+                        });
+                      });
+                    </script>
+                    </div>
+                  </div>
+                  <div class="col-sm-6" style="padding:40px 10px 0px 10px;">
+                    <div class="embed-responsive embed-responsive-16by9">
+                      <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/-rSFUTpiF1Y" frameborder="0" allowfullscreen></iframe>
+                    </div>
+                  </div>
+                </div>
+            </div>
+        </section>
         <!-- ******Why Section****** -->
         <section id="about" class="section why">
             <div class="container">
                 <h2 class="title text-center">About The Robotics Club</h2>
-                <p class="intro text-center">The Robotics Club of SRM University, Vadapalani was founded in 2010 by the departments of Computer Science & Engineering, Electronics & Communication Engineering and Mechanical Engineering. Over the past 4 years, the club has grown from its humble beginnings to a full-fledged club by hosting various renowned guest lecturers and by organizing numerous workshops.</p>
-            </div>   
-        </section><!--//why-->  
+                <p  align="justify" class="ed">The Robotics Club of SRM University, Vadapalani Campus, was born on the 8th of March 2011, as a joint effort between students and teachers to build a platform where they could channel and give form to their passion for Robotics. It kicked off to a roaring start with the organizing of the two day workshop on BASCOM based robotics design in March 2011 and the workshop on Robot design using Arduino Microcontroller in August 2011. March 2012 was eventful for the club with the conception of Xion’12, a two day national level technical symposium comprising robot competitions, technical and fun events followed by a workshop on Sixth sense robotics with vision robotics. In March 2013, the club ventured into PIC Microcontroller based robotic design by hosting a two day workshop. The year of 2014 saw three workshops being conducted, Accelerobotics-gesture controlled robots and Biped-walking robot in March 2014 followed by ISensoBots-sensors based multi-application robot design in August 2014. The same year also saw the much awaited Xion’14 make an appearance in March with exciting technical and fun events making quite a splash on all the enthusiastic participants who came in large numbers. Emboldened with the success of Xion’14, the Robotics Club now brings to you, Xion’15.</p>
+            </div>
+        </section><!--//why-->
         <section id="events" class="section">
             <div class="container">
             <div class="row">
@@ -268,40 +309,95 @@
                         <hr style="width:200px">
                     </div>
                 </div>
-                <div class="row flex-container">
-                    <div class="col-md-3 text-center">
+
+                <div class="row text-center">
+                  <div>
+                  <span class="intro">Event Organisers<br/></span>
+                  <div class="flex-container-contact">
+                    <div class="col-md-4 text-center">
                         <h3>Srividya</h3>
+                        <span>srividya.ramaswamy23@gmail.com</span><br/>
                         <i class="fa fa-mobile fa-2x"></i>
                         &nbsp;
-                        <span class="">+91 9867631007</span>
+                        <span class="">+91 9940118475</span>
                     </div>
-                    <div class="col-md-3 text-center">
+                    <div class="col-md-4 text-center">
                         <h3>Naman Jha</h3>
+                        <span>namanjha1830@yahoo.co.in</span><br/>
                         <i class="fa fa-mobile fa-2x"></i>
                         &nbsp;
                         <span class="">+91 9042912220</span>
                     </div>
-                    <div class="col-md-3 text-center">
+                    <div class="col-md-4 text-center">
                       <h3>Lakshmi Kanth</h3>
+                      <span>rssrlakshmikanth@gmail.com</span><br/>
                         <i class="fa fa-mobile fa-2x"></i>
                         &nbsp;
-                        <span class="">+91 8015247999</span>
+                        <span class="">+91 9094586562</span>
                     </div>
-                    <div class="col-md-3 text-center">
-                      <h3>Anita</h3>
+                    </div>
+                    </div>
+                </div>
+                <div class="row text-center">
+                  <div class="flex-container-contact">
+                    <div class="col-md-4 text-center" style="padding:20px;">
+                      <span class="intro">Workshop Head</span>
+                      <div>
+                        <h3>Kartik Grover</h3>
+                        <span>groverkg04@gmail.com</span><br/>
+                        <i class="fa fa-mobile fa-2x"></i>
+                        &nbsp;
+                        <span class="">+91 7200261756</span>
+                      </div>
+                    </div>
+                    <div class="col-md-4 text-center" style="padding:20px">
+                      <span class="intro">Sponsor Head</span>
+                      <div>
+                        <h3>Chakradhar Venkat</h3>
+                        <span>vvchakradhar12@gmail.com</span><br/>
+                        <i class="fa fa-mobile fa-2x"></i>
+                        &nbsp;
+                        <span class="">+91 9500837830</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                 <div class="row text-center">
+                <div>
+                  <span class="intro">Staff Coordinators</span><br/>
+                  <div class="flex-container-contact">
+                    <div class="col-md-4 text-center">
+                      <h3>Mrs. Anita Christaline</h3>
+                      <span>anita.j@vdp.srmuniv.ac.in</span><br/>
                         <i class="fa fa-mobile fa-2x"></i>
                         &nbsp;
                         <span class="">+91 9444028830</span>
+                    </div>
+                    <div class="col-md-4 text-center">
+                      <h3>Mr. Benu Deepsun</h3>
+                      <span>benudeepsun.s@vdp.srmuniv.ac.in</span><br/>
+                        <i class="fa fa-mobile fa-2x"></i>
+                        &nbsp;
+                        <span class="">+91 8939789171</span>
+                    </div>
+                     <div class="col-md-4 text-center">
+                      <h3>Ms. Aruna P.</h3>
+                      <span>aruna.p@vdp.srmuniv.ac.in</span><br/>
+                        <i class="fa fa-mobile fa-2x"></i>
+                        &nbsp;
+                        <span class="">+91 99500721814</span>
+                    </div>
+                    </div>
                     </div>
                 </div>
                     <div class="col-md-12 text-center" style="padding:50px;">
                         <br />
                         <br />
-                        <span class="intro">For any queries email us at <a href="mailto:srmubertech@gmail.com">srmxion@gmail.com</a></span>
+                        <span class="intro">For any queries email us at <a href="mailto:xionsrm@gmail.com">xionsrm@gmail.com</a></span>
                     </div>
             </div>
-        </section>             
-    <!-- ******FOOTER****** --> 
+        </section>
+    <!-- ******FOOTER****** -->
     <footer class="text-center footer">
         <div class="footer-above">
             <div class="container">
@@ -328,17 +424,6 @@
                 </div>
             </div>
         </div>
-        <div class="footer-below">
-            <div class="container">
-                <div class="row">
-                    <div class="col-lg-12">
-                        Made with passion by Cepheuen
-                        <br />
-                        Copyright &copy; <a href="http://www.cepheuen.com">Cepheuen</a> 2015
-                    </div>
-                </div>
-            </div>
-        </div>
     </footer>
     </div>
     <!-- Modals -->
@@ -352,19 +437,20 @@
                     <ul class="nav nav-tabs">
                         <li class="active"><a href="#rules1" data-toggle="tab">Rules</a></li>
                          <li><a href="#topics1" data-toggle="tab">Topics</a></li>
-                        <li><a href="#contact1" data-toggle="tab">Contact</a></li>   
+                        <li><a href="#contact1" data-toggle="tab">Contact</a></li>
                     </ul>
                     <div class="tab-content">
                         <div class="tab-pane active" id="rules1"><br/>
                             <ul style="text-align:left">
                                 <li>Maximum of two authors.</li>
-                                <li>Submission of abstract (in a word document) for not more than 300 words by march 1st.</li>
+                                <li>Abstract (in a word document) of not more than 300 words has to be submitted to <b>xion.probopaper@gmail.com</b></li>
                                 <li>Based on the peering review of the abstract, few papers will be selected for presenting the paper.</li>
                                 <li> The presentation should last a maximum of 7 minutes. There will be a 3 minutes query and answer session following it.</li>
                                 <li>The organizers reserve the right to change/update the rules of the contest at any point of time and will do their best to inform the participants of the same. However, it is ultimately the responsibility of the teams to keep themselves updated. Violation of any rule can result in rejection of paper.</li>
                                 <li>The oral presentation should be in the form of Microsoft power point slides which contains the brief of your paper, not to exceed 21.</li>
                                 <li>All the team members may be present during the event. There will be an interactive session with the judges, other participants and students during the time allotted for the event.</li>
                                 <li>The selected participants should submit a hard copy of the paper with abstract in the beginning in A4 sheets not exceeding ten pages(including references, tables and figures)</li>
+                                <li>Last Date of submission : 12<sup>th</sup> March 2015</li>
                             </ul>
                         </div>
                         <div class="tab-pane" id="topics1" align="center">
@@ -404,7 +490,7 @@
             <div class="modal-content">
                 <div class="modal-body">
                     <h2>GOBLIN BOTS</h2>
-                    <p>Design a remote control BOT ( wired or wireless )that can pick a cubes over an artificial arena and place them at specific destinations.</p>
+                    <p>Design a remote control BOT (wired or wireless) that can pick a cubes over an artificial arena and place them at specific destinations.</p>
                     <hr>
                     <ul class="nav nav-tabs">
                         <li class="active"><a href="#rules2" data-toggle="tab">Rules</a></li>
@@ -451,8 +537,7 @@
                             <li>Wireless BOT will get extra 20 points in advance</li><br>
                             <li>The BOT having self-made wireless system on bread board or PCB will get extra 20 points</li><br/>
                             <li>The BOT best in design and concept will get 10 points extra</li><br/>
-                            <li>The BOT should start to move with 300 second in reverse counting and complete the
-whole path in minimum time; remaining seconds would be its score</li><br/>
+                            <li>The BOT should start to move with 300 second in reverse counting and complete the whole path in minimum time; remaining seconds would be its score</li><br/>
                           </ul>
                         </div>
                         <div class="tab-pane" id="contact2" align="center">
@@ -462,7 +547,7 @@ whole path in minimum time; remaining seconds would be its score</li><br/>
                               <span class="title"><b>Sri Anil</b></span><br/>
                               <span class="intro">srianil.k111@gmail.com</span><br/>
                               <i class="fa fa-mobile fa-2x"></i>&nbsp;<span class="title">7810005209</span><br /><br />
-                              
+
                               <i class="fa fa-user fa-2x"></i>&nbsp;
                               <span class="title"><b>Oringam Vinod kumar</b></span>
                               <br />
@@ -488,7 +573,7 @@ whole path in minimum time; remaining seconds would be its score</li><br/>
                     <ul class="nav nav-tabs">
                         <li class="active"><a href="#rules3" data-toggle="tab">Rules</a></li>
                          <li><a href="#instruct3" data-toggle="tab">Instructions</a></li>
-                        <li><a href="#contact3" data-toggle="tab">Contact</a></li>   
+                        <li><a href="#contact3" data-toggle="tab">Contact</a></li>
                     </ul>
                     <div class="tab-content">
                         <div class="tab-pane active" id="rules3"><br/>
@@ -520,6 +605,11 @@ whole path in minimum time; remaining seconds would be its score</li><br/>
                             <span class="title"><b>Bhavana Tumma</b></span><br/>
                             <span class="intro">bhavana_tumma@yahoo.co.in</span><br/>
                             <i class="fa fa-mobile fa-2x"></i>&nbsp;<span class="title">9884843865</span><br /><br />
+                            <i class="fa fa-user fa-2x"></i>&nbsp;
+                            <span class="title"><b>Chirag Gala</b></span><br/>
+                            <span class="intro">chi76Iamback@gmail.com</span><br/>
+                            <i class="fa fa-mobile fa-2x"></i>&nbsp;<span class="title">9962999156</span><br /><br />
+
                         </div><br/>
                               <button type="button" class="btn btn-default" data-dismiss="modal"><i class="fa fa-times"></i> Close</button>
                     </div>
@@ -538,7 +628,7 @@ whole path in minimum time; remaining seconds would be its score</li><br/>
                     <ul class="nav nav-tabs">
                         <li class="active"><a href="#rules4" data-toggle="tab">Rules</a></li>
                          <li><a href="#instruct4" data-toggle="tab">Instructions</a></li>
-                        <li><a href="#contact4" data-toggle="tab">Contact</a></li>   
+                        <li><a href="#contact4" data-toggle="tab">Contact</a></li>
                     </ul>
                     <div class="tab-content">
                         <div class="tab-pane active" id="rules4"><br/>
@@ -585,7 +675,7 @@ whole path in minimum time; remaining seconds would be its score</li><br/>
                         <li class="active"><a href="#instruct5" data-toggle="tab">Instructions</a></li>
                         <li><a href="#specs5" data-toggle="tab">Specs</a></li>
                         <li><a href="#rules5" data-toggle="tab">Rules</a></li>
-                        <li><a href="#contact5" data-toggle="tab">Contact</a></li>   
+                        <li><a href="#contact5" data-toggle="tab">Contact</a></li>
                     </ul>
                     <div class="tab-content">
                         <div class="tab-pane active" id="rules5"><br/>
@@ -602,7 +692,7 @@ whole path in minimum time; remaining seconds would be its score</li><br/>
                           <ul style="text-align:left;padding:50px 20px 20px 20px;">
                             <li>This is an event where the teams are required to fabricate a miniature model of a remote controlled vehicle that is powered by an Internal Combustion(IC) Engine for propulsion.</li>
                             <li>No DC motor shall be used for this purpose.</li>
-                            <li>Most of the parts of this vehicle like steering mechanism, chassis, suspension mechanism are made by the teams themselves while braking system, gears may be bought from the market.</li>    
+                            <li>Most of the parts of this vehicle like steering mechanism, chassis, suspension mechanism are made by the teams themselves while braking system, gears may be bought from the market.</li>
                             <li>This vehicle mimics a real life car and should be capable of racing on an off-road dirt track paved by a varied range of obstacles.</li>
                             <li>These obstacles can range from jumping over planks to dodging closely placed pipes or even race on a zig-zag path.</li>
                             <li>The vehicles should even be strong enough to withstand impact as their might be a fall or a collision.</li>
@@ -651,7 +741,7 @@ whole path in minimum time; remaining seconds would be its score</li><br/>
                     <ul class="nav nav-tabs">
                         <li class="active"><a href="#instruct6" data-toggle="tab">Instructions</a></li>
                          <li><a href="#rules6" data-toggle="tab">Rules</a></li>
-                        <li><a href="#contact6" data-toggle="tab">Contact</a></li>   
+                        <li><a href="#contact6" data-toggle="tab">Contact</a></li>
                     </ul>
                     <div class="tab-content">
                         <div class="tab-pane active" id="instruct6"><br/>
@@ -717,7 +807,7 @@ whole path in minimum time; remaining seconds would be its score</li><br/>
                          <li><a href="#specs7" data-toggle="tab">Specs</a></li>
                          <li><a href="#arena7" data-toggle="tab">Arena</a></li>
                          <li><a href="#judging7" data-toggle="tab">Judging</a></li>
-                        <li><a href="#contact7" data-toggle="tab">Contact</a></li>   
+                        <li><a href="#contact7" data-toggle="tab">Contact</a></li>
                     </ul>
                     <div class="tab-content">
                         <div class="tab-pane active" id="rules7"><br/>
@@ -817,7 +907,7 @@ whole path in minimum time; remaining seconds would be its score</li><br/>
                          <li><a href="#instruct8" data-toggle="tab">Game</a></li>
                          <li><a href="#arena8">Arena</a></li>
                          <li><a href="#judging">Judging</a></li>
-                        <li><a href="#contact8" data-toggle="tab">Contact</a></li>   
+                        <li><a href="#contact8" data-toggle="tab">Contact</a></li>
                     </ul>
                     <div class="tab-content">
                         <div class="tab-pane active" id="rules8"><br/>
@@ -895,7 +985,7 @@ whole path in minimum time; remaining seconds would be its score</li><br/>
                         <li class="active"><a href="#arena9" data-toggle="tab">Arena</a></li>
                         <li><a href="#specs9" data-toggle="tab">Specs</a></li>
                         <li><a href="#rules9" data-toggle="tab">Rules</a></li>
-                        <li><a href="#contact9" data-toggle="tab">Contact</a></li>   
+                        <li><a href="#contact9" data-toggle="tab">Contact</a></li>
                     </ul>
                     <div class="tab-content">
                         <div class="tab-pane active" id="arena9"><br/>
@@ -941,7 +1031,7 @@ whole path in minimum time; remaining seconds would be its score</li><br/>
                         <div class="tab-pane" id="contact9" align="center" style="padding:20px;">
                             <h4>Event Co-Ordinators</h4><br/>
                             <i class="fa fa-user fa-2x"></i>&nbsp;
-                            <span class="title"><b>Shoaib</b></span><br/> 
+                            <span class="title"><b>Shoaib</b></span><br/>
                             <i class="fa fa-mobile fa-2x"></i>&nbsp;<span class="title">7200582998</span><br /><br />
                             <i class="fa fa-user fa-2x"></i>&nbsp;
                             <span class="title"><b>Zahra</b></span><br/>
@@ -964,7 +1054,7 @@ whole path in minimum time; remaining seconds would be its score</li><br/>
                     <ul class="nav nav-tabs">
                         <li class="active"><a href="#rules10" data-toggle="tab">Rules</a></li>
                         <li><a href="#instruct10" data-toggle="tab">Instructions</a></li>
-                        <li><a href="#contact10" data-toggle="tab">Contact</a></li>   
+                        <li><a href="#contact10" data-toggle="tab">Contact</a></li>
                     </ul>
                     <div class="tab-content">
                         <div class="tab-pane active" id="rules10"><br/>
@@ -977,8 +1067,8 @@ whole path in minimum time; remaining seconds would be its score</li><br/>
                         </div>
                         <div class="tab-pane" id="instruct10" align="center">
                           <ul style="text-align:left;padding:50px 20px 20px 20px;">
-                            <li>The abstract should be mailed to srmxion2015@gmail.com</li><br/>
-                            <li>It should be sent before </li><br/>
+                            <li>The abstract should be mailed to xion.ideovate@gmail.com</li><br/>
+                            <li>Last date of submission : 12<sup>th</sup> March 2015</li><br/>
                             <li>There is no special registration fee for this event ,just the common registration is sufficient to participate.</li><br/>
                             <li>Our judges will select participants to present their ideas by selecting them from the abstracts.</li><br/>
                             <li>We will let you know if you get selected for your Idea (Abstract)</li><br/>
@@ -1011,7 +1101,7 @@ whole path in minimum time; remaining seconds would be its score</li><br/>
                         <li class="active"><a href="#rules11" data-toggle="tab">Rules</a></li>
                         <li><a href="#specs11" data-toggle="tab">Specs</a></li>
                         <li><a href="#judging11" data-toggle="tab">Judging</a></li>
-                        <li><a href="#contact11" data-toggle="tab">Contact</a></li>   
+                        <li><a href="#contact11" data-toggle="tab">Contact</a></li>
                     </ul>
                     <div class="tab-content">
                         <div class="tab-pane active" id="rules11"><br/>
@@ -1163,14 +1253,15 @@ whole path in minimum time; remaining seconds would be its score</li><br/>
         </div>
     </div>
 
-    <!-- Javascript -->          
-    <script type="text/javascript" src="js/jquery-1.11.2.min.js"></script>
+    <!-- Javascript -->
+    
     <script type="text/javascript" src="js/jquery-migrate-1.2.1.min.js"></script>
-    <script type="text/javascript" src="js/bootstrap.min.js"></script> 
+    
+    <script type="text/javascript" src="js/bootstrap.min.js"></script>
     <script type="text/javascript" src="js/bootstrap-hover-dropdown.min.js"></script>
     <script type="text/javascript" src="js/back-to-top.js"></script>
     <script type="text/javascript" src="js/jquery-placeholder/jquery.placeholder.js"></script>
-    <script type="text/javascript" src="flexslider/jquery.flexslider-min.js"></script>     
+    <script type="text/javascript" src="flexslider/jquery.flexslider-min.js"></script>
     <script type="text/javascript" src="js/main.js"></script>
     <script src="http://maps.googleapis.com/maps/api/js?key=AIzaSyASm3CwaK9qtcZEWYa-iQwHaGi3gcosAJc&sensor=false"></script>
     <script type="text/javascript" src="js/smooth-scroll.js"></script>
@@ -1179,6 +1270,7 @@ whole path in minimum time; remaining seconds would be its score</li><br/>
             easing:'easeInOutCubic'
         });
     </script>
+    
     <!-- Map -->
               <script type="text/javascript">
               // When the window has finished loading create our google map below
@@ -1211,8 +1303,7 @@ whole path in minimum time; remaining seconds would be its score</li><br/>
                 }
                 google.maps.event.addDomListener(window, 'load', init);
     </script>
-    
-            
-</body>
-</html> 
 
+
+</body>
+</html>
